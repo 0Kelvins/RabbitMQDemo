@@ -3,10 +3,11 @@ using System.Collections.Concurrent;
 using System.Text;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using Send.Abstract;
 
-namespace Send
+namespace Send.Concrete
 {
-    public class RPCClient
+    public class RPCClient : IProducer
     {
         private readonly IConnection connection;
         private readonly IModel channel;
@@ -60,6 +61,15 @@ namespace Send
         public void Close()
         {
             connection.Close();
+        }
+
+        public void Send()
+        {
+            Console.WriteLine(" [x] Requesting fib(30)");
+            var response = Call("30");
+
+            Console.WriteLine(" [.] Got '{0}'", response);
+            Close();
         }
     }
 }

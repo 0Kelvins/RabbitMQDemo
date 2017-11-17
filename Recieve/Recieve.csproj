@@ -51,6 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IConsumer.cs" />
+    <Compile Include="Concrete\SubscribeConsumer.cs" />
+    <Compile Include="Concrete\RoutingConsumer.cs" />
+    <Compile Include="Concrete\RPCServer.cs" />
+    <Compile Include="Concrete\SimpleConsumer.cs" />
+    <Compile Include="Concrete\TopicConsumer.cs" />
+    <Compile Include="Concrete\WorkQueueConsumer.cs" />
+    <Compile Include="Infrastructure\ConsumerFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +66,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
