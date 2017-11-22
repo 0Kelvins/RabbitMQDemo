@@ -26,7 +26,7 @@ namespace Send.Concrete
                                      autoDelete: false,
                                      arguments: null);
 
-                string message = "Hello World!";
+                string message = "Hello World!";    // 传送复杂数据对象使用序列化
                 var body = Encoding.UTF8.GetBytes(message);
 
                 //routingKey：路由键，#匹配0个或多个单词，*匹配一个单词，在topic exchange做消息转发用
